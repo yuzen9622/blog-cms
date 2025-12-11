@@ -1,10 +1,36 @@
 export default [
   "strapi::logger",
   "strapi::errors",
-  "strapi::security",
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          "connect-src": ["'self'", "https:"],
+          "img-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            "market-assets.strapi.io",
+            "res.cloudinary.com",
+          ],
+          "media-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            "market-assets.strapi.io",
+            "res.cloudinary.com",
+          ],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
   {
     name: "strapi::cors",
     config: {
+      maxAge: 3600,
       origin: ["http://localhost:5173", "https://www.yuzen.dev"],
       headers: ["Content-Type", "Authorization", "Origin", "Accept"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
