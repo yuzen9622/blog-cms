@@ -71,6 +71,14 @@
           "localized": true
         }
       }
+    },
+    "isPublished": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
