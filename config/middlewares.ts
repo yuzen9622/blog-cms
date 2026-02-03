@@ -31,7 +31,12 @@ export default [
     name: "strapi::cors",
     config: {
       maxAge: 3600,
-      origin: ["http://localhost:5173", "https://www.yuzen.dev"],
+      origin: [
+        "http://localhost:5173",
+        "https://www.yuzen.dev",
+        "http://localhost:3000",
+        "https://2026.yuzen.dev"
+      ],
       headers: ["Content-Type", "Authorization", "Origin", "Accept"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       credentials: true,
