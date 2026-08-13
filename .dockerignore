@@ -1,0 +1,14 @@
+# 不要帶進 build context（避免把 mac 版 node_modules 蓋進容器）
+node_modules
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+.tmp
+.next
+npm-debug.log*
+.DS_Store
+._*
+docker-compose*.yml
+Dockerfile*
